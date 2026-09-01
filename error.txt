@@ -1,0 +1,41 @@
+bazel build //...
+INFO: Analyzed target //:gawk_version (141 packages loaded, 4347 targets configured).
+ERROR: /private/var/tmp/_bazel_njlr/cbfc085e1b482ba0d822bc1cbc0ce08b/external/gawk+/BUILD.bazel:743:11: Compiling gawkmisc.c [for tool] failed: (Exit 1): c++ failed: error executing CppCompile command (from target @@gawk+//:awk) external/hermetic_cc_toolchain++toolchains+zig_config/tools/aarch64-macos-none/c++ -MD -MF bazel-out/darwin_arm64-opt-exec-ST-d57f47055a04/bin/external/gawk+/_objs/awk/gawkmisc.d ... (remaining 35 arguments skipped)
+
+Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+In file included from external/gawk+/gawkmisc.c:28:
+external/gawk+/awk.h:213:27: error: field has incomplete type 'struct re_pattern_buffer'
+  213 |         struct re_pattern_buffer pat;
+      |                                  ^
+external/gawk+/awk.h:213:9: note: forward declaration of 'struct re_pattern_buffer'
+  213 |         struct re_pattern_buffer pat;
+      |                ^
+external/gawk+/awk.h:214:22: error: field has incomplete type 'struct re_registers'
+  214 |         struct re_registers regs;
+      |                             ^
+external/gawk+/awk.h:214:9: note: forward declaration of 'struct re_registers'
+  214 |         struct re_registers regs;
+      |                ^
+2 errors generated.
+ERROR: /private/var/tmp/_bazel_njlr/cbfc085e1b482ba0d822bc1cbc0ce08b/external/gawk+/BUILD.bazel:815:10: Compiling main.c [for tool] failed: (Exit 1): c++ failed: error executing CppCompile command (from target @@gawk+//:gawk) external/hermetic_cc_toolchain++toolchains+zig_config/tools/aarch64-macos-none/c++ -MD -MF bazel-out/darwin_arm64-opt-exec-ST-d57f47055a04/bin/external/gawk+/_objs/gawk/main.d ... (remaining 43 arguments skipped)
+
+Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+In file included from external/gawk+/main.c:30:
+external/gawk+/awk.h:213:27: error: field has incomplete type 'struct re_pattern_buffer'
+  213 |         struct re_pattern_buffer pat;
+      |                                  ^
+external/gawk+/awk.h:213:9: note: forward declaration of 'struct re_pattern_buffer'
+  213 |         struct re_pattern_buffer pat;
+      |                ^
+external/gawk+/awk.h:214:22: error: field has incomplete type 'struct re_registers'
+  214 |         struct re_registers regs;
+      |                             ^
+external/gawk+/awk.h:214:9: note: forward declaration of 'struct re_registers'
+  214 |         struct re_registers regs;
+      |                ^
+2 errors generated.
+Target //:gawk_version failed to build
+Use --verbose_failures to see the command lines of failed build steps.
+INFO: Elapsed time: 11.101s, Critical Path: 5.64s
+INFO: 142 processes: 133 action cache hit, 16 internal, 126 darwin-sandbox.
+ERROR: Build did NOT complete successfully

@@ -1,0 +1,6 @@
+genrule(
+    name = "gawk_version",
+    outs = ["gawk_version.txt"],
+    cmd = "$(location @gawk//:gawk) --version > $@",
+    tools = ["@gawk//:gawk"],
+)
